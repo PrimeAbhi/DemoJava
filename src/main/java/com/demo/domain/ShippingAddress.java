@@ -22,6 +22,7 @@ public class ShippingAddress {
 	private String shippingAddressState;
 	private String shippingAddressCountry;
 	private String shippingAddressZipcode;
+	private String shippingAddressMobile;
 
 	@OneToOne
 	@JsonIgnore
@@ -97,6 +98,14 @@ public class ShippingAddress {
 
 	public void setShippingAddressState(String shippingAddressState) {
 		this.shippingAddressState = shippingAddressState;
+	}
+
+	public String getShippingAddressMobile() {
+		return shippingAddressMobile;
+	}
+
+	public void setShippingAddressMobile(String shippingAddressMobile) {
+		this.shippingAddressMobile = shippingAddressMobile;
 	}
 
 }

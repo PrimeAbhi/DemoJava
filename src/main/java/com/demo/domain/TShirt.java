@@ -12,24 +12,31 @@ import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-public class TShirt implements Serializable{
+public class TShirt implements Serializable {
 	private static final long serialVersionUID = 425345L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String title;
+	private String name;
 	private String category;
-	private double shippingWeight;
-	private double listPrice;
+	private String size;
+	private double discount;
+	private String material;
+	private String color;
+	private String design;
+	private String sleeve;
+	private double rating;
 	private double ourPrice;
-	private boolean active = true;
-	
-	@Column(columnDefinition="text")
+	private double listPrice;
+
+	@Column(columnDefinition = "text")
 	private String description;
 	private int inStockNumber;
-	
+	private int total;
+
 	@Transient
 	private MultipartFile tshirtImage;
 
@@ -57,20 +64,60 @@ public class TShirt implements Serializable{
 		this.category = category;
 	}
 
-	public double getShippingWeight() {
-		return shippingWeight;
+	public String getSize() {
+		return size;
 	}
 
-	public void setShippingWeight(double shippingWeight) {
-		this.shippingWeight = shippingWeight;
+	public void setSize(String size) {
+		this.size = size;
 	}
 
-	public double getListPrice() {
-		return listPrice;
+	public double getDiscount() {
+		return discount;
 	}
 
-	public void setListPrice(double listPrice) {
-		this.listPrice = listPrice;
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getDesign() {
+		return design;
+	}
+
+	public void setDesign(String design) {
+		this.design = design;
+	}
+
+	public String getSleeve() {
+		return sleeve;
+	}
+
+	public void setSleeve(String sleeve) {
+		this.sleeve = sleeve;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 
 	public double getOurPrice() {
@@ -81,12 +128,12 @@ public class TShirt implements Serializable{
 		this.ourPrice = ourPrice;
 	}
 
-	public boolean isActive() {
-		return active;
+	public double getListPrice() {
+		return listPrice;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setListPrice(double listPrice) {
+		this.listPrice = listPrice;
 	}
 
 	public String getDescription() {
@@ -113,10 +160,20 @@ public class TShirt implements Serializable{
 		this.tshirtImage = tshirtImage;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getName() {
+		return name;
 	}
-	
-	
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
 
 }

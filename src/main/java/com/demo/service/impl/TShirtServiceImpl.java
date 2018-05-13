@@ -1,6 +1,5 @@
 package com.demo.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +18,7 @@ public class TShirtServiceImpl implements TShirtService {
 	public List<TShirt> findAll() {
 		List<TShirt> tshirtList = (List<TShirt>) tshirtRepository.findAll();
 
-		List<TShirt> activeTshirtList = new ArrayList<>();
-
-		for (TShirt tshirt : tshirtList) {
-			if (tshirt.isActive()) {
-				activeTshirtList.add(tshirt);
-			}
-		}
-
-		return activeTshirtList;
+		return tshirtList;
 	}
 
 	public TShirt findOne(Long id) {
@@ -42,15 +33,7 @@ public class TShirtServiceImpl implements TShirtService {
 	public List<TShirt> blurrySearch(String keyword) {
 		List<TShirt> tshirtList = tshirtRepository.findByTitleContaining(keyword);
 
-		List<TShirt> activeTshirtList = new ArrayList<>();
-
-		for (TShirt tshirt : tshirtList) {
-			if (tshirt.isActive()) {
-				activeTshirtList.add(tshirt);
-			}
-		}
-
-		return activeTshirtList;
+		return tshirtList;
 	}
 
 	public void removeOne(Long id) {

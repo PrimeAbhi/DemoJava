@@ -25,6 +25,7 @@ public class UserShipping implements Serializable {
 	private String userShippingState;
 	private String userShippingCountry;
 	private String userShippingZipcode;
+	private String userShippingMobile;
 	private Boolean userShippingDefault;
 
 	@ManyToOne
@@ -111,4 +112,13 @@ public class UserShipping implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public String getUserShippingMobile() {
+		return userShippingMobile;
+	}
+
+	public void setUserShippingMobile(String userShippingMobile) {
+		this.userShippingMobile = userShippingMobile;
+	}
+
 }
